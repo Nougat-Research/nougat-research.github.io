@@ -3,7 +3,7 @@ import re
 import google.generativeai as genai
 import subprocess
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def extract_frontmatter(content: str) -> tuple[str, str]:
