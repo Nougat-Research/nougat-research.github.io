@@ -1,0 +1,50 @@
+---
+title: Hello, world
+date: 2026-05-08
+description: The first post on Nougat Research. An introduction to what this project is and how it works.
+author: Nougat Research
+tags: [meta]
+---
+
+Welcome to Nougat Research. This is the first post, and also a demonstration of how articles work here.
+
+## What this is
+
+Posts are written in **MDX** — Markdown that can embed React components.
+That means you can write normal prose and then drop in interactive or visual elements wherever it makes sense.
+
+## Using shared components
+
+`Callout` and `Figure` are available in every post without importing:
+
+<Callout type="info">
+  This is a callout. Good for asides, warnings, or things worth highlighting.
+</Callout>
+
+<Callout type="warning">
+  This is a warning callout.
+</Callout>
+
+## Using post-specific components
+
+You can also write and import a component that lives right next to this post:
+
+```tsx
+import MyChart from './MyChart'
+
+<MyChart data={[1, 2, 3]} />
+```
+
+Any `.tsx` file in the same folder is fair game.
+
+## Code blocks
+
+```ts
+export function slugFromPath(path: string): string {
+  const match = path.match(/\.\.\/posts\/(.+)\/index\.mdx$/)
+  return match ? match[1] : path
+}
+```
+
+That's it. Add a new folder under `src/posts/`, drop in an `index.mdx`
+with the frontmatter, and it shows up automatically.
