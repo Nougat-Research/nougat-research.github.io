@@ -5,7 +5,7 @@ import subprocess
 
 print(len(os.environ["GOOGLE_API_KEY"]))
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
 
 def extract_frontmatter(content: str) -> tuple[str, str]:
     """Extract YAML frontmatter from MDX content."""
