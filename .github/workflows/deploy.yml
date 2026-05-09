@@ -50,7 +50,7 @@ jobs:
           git push
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --dangerously-allow-all-builds
 
       - name: Build
         run: pnpm run build
