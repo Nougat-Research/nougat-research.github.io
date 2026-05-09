@@ -46,7 +46,6 @@ export async function getAllPosts(lang: Lang = 'en'): Promise<Post[]> {
   
   for (const post of posts) {
     if (postsBySlug.has(post.slug)) {
-      const existing = postsBySlug.get(post.slug)!
       // For English: prefer index.en.mdx, fall back to index.mdx
       // For Spanish: prefer index.mdx, fall back to index.en.mdx
       if (lang === 'en') {
