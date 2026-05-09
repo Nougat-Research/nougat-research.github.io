@@ -37,7 +37,7 @@ jobs:
       - name: Translate if requested
         if: contains(github.event.head_commit.message, '!translate')
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           pip install google-generativeai
           python .github/scripts/translate_logic.py
