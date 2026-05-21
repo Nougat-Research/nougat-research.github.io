@@ -30,7 +30,7 @@ def translate_frontmatter(frontmatter: str) -> str:
             elif value.startswith("'") and value.endswith("'"):
                 value = value[1:-1]
             
-            prompt = f"Translate this to English, keep it concise:\n\n{value}"
+            prompt = f"Translate this to English, keep the original tone and formatting, and do not add anything else besides the translated string:\n\n{value}"
             response = model.generate_content(prompt)
             translated_value = response.text.strip()
             translated_lines.append(f'{key}: "{translated_value}"')
@@ -56,7 +56,7 @@ def translate_content():
         
         translated_frontmatter = translate_frontmatter(frontmatter)
         
-        prompt = f"Translate this article from Spanish to English. Keep all Markdown formatting, code blocks, and React component tags intact. Do not modify frontmatter format:\n\n{body}"
+        prompt = f"Translate this article from Spanish to English. Keep all Markdown formatting, code blocks, and React component tags intact. Do not modify the tone or meaning in any way, and only return the translated body, nothing else:\n\n{body}"
         response = model.generate_content(prompt)
         translated_body = response.text
         
