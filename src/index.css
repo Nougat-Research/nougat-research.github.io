@@ -590,6 +590,12 @@ footer {
   }
 }
 
+#navLogo {
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+}
+
 .logo-mid {
   display: inline-block;
   overflow: hidden;
@@ -599,6 +605,14 @@ footer {
   transition:
     max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-start, 
+.logo-mid, 
+.logo-dot {
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
 }
 
 .logo.expanded .logo-mid {

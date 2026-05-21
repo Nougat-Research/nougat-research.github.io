@@ -43,7 +43,7 @@ export default function Layout() {
       <nav>
         <div className="container">
           <NavLink to="/" className="logo" ref={logoRef} id="navLogo">
-            n<span className="logo-mid">ougat</span><span className="logo-dot">.</span>
+            <span className="logo-start">n</span><span className="logo-mid">ougat</span><span className="logo-dot">.</span>
           </NavLink>
           <div className="nav-right">
             <ul>
